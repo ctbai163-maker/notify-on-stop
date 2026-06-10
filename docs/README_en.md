@@ -1,7 +1,8 @@
 <h1 align="center">notify-on-stop</h1>
 
 <p align="center">
-  <strong>Desktop notifications + sound alerts for Claude Code</strong>
+  <strong>Desktop notifications + sound alerts for AI agents</strong><br>
+  <sub>Claude Code · OpenAI Codex CLI · Tencent WorkBuddy</sub>
 </p>
 
 <p align="center">
@@ -54,10 +55,17 @@ Each sound is also accompanied by a standard **system notification banner**, so 
 
 1. Download [`notify-on-stop.skill`](../notify-on-stop.skill) and double-click to install it in Claude Code.
 2. In a Claude Code session, say: *"Set up completion notifications"* — or just run `/notify-on-stop`.
-3. Claude will detect your OS and write the appropriate hooks into `~/.claude/settings.json` automatically.
-4. **Fully quit and relaunch Claude Code.** Hooks are loaded at startup — if Claude Code was already running when the hooks were written, it won't pick them up until you restart. This applies to all platforms.
+3. Claude will detect which tools you have installed and write hooks into each one's config file:
 
-**macOS only:** After installation, go to **System Settings → Notifications → Claude** (or your terminal app) and make sure **Sounds** is enabled. The audio will still play regardless, but this ensures the banner notification also makes a sound of its own.
+| Tool | Config file |
+|------|-------------|
+| Claude Code | `~/.claude/settings.json` |
+| OpenAI Codex CLI | `~/.codex/hooks.json` |
+| Tencent WorkBuddy | `~/.codebuddy/settings.json` |
+
+4. **Fully quit and relaunch each tool.** Hooks are loaded at startup — a restart is required for changes to take effect.
+
+**macOS only:** After installation, go to **System Settings → Notifications** and make sure **Sounds** is enabled for each app. The audio plays regardless, but this ensures the banner also chimes.
 
 **Supported platforms:** macOS, Linux, Windows.
 

@@ -1,7 +1,8 @@
 <h1 align="center">notify-on-stop</h1>
 
 <p align="center">
-  <strong>为 Claude Code 添加任务完成提醒：桌面通知 + 音效</strong>
+  <strong>为 AI Agent 添加任务完成提醒：桌面通知 + 音效</strong><br>
+  <sub>支持 Claude Code · OpenAI Codex CLI · Tencent WorkBuddy</sub>
 </p>
 
 <p align="center">
@@ -54,10 +55,17 @@
 
 1. 下载 [`notify-on-stop.skill`](notify-on-stop.skill)，双击安装到 Claude Code。
 2. 在 Claude Code 会话中说：*"帮我配置任务完成通知"*——或者直接运行 `/notify-on-stop`。
-3. Claude 会自动检测你的操作系统，并将对应的 hook 写入 `~/.claude/settings.json`。
-4. **完全退出并重新启动 Claude Code。** Hooks 在启动时加载——如果写入配置时 Claude Code 已在运行，必须重启才能生效。所有平台均适用。
+3. Claude 会自动检测你安装了哪些工具，并分别写入各自的配置文件：
 
-**macOS 用户注意：** 安装完成后，前往**系统设置 → 通知 → Claude**（或运行 Claude Code 的终端 App），确认**声音**开关已打开。这一步不影响音效播放，但能保证通知横幅本身也带提示音。
+| 工具 | 配置文件 |
+|------|---------|
+| Claude Code | `~/.claude/settings.json` |
+| OpenAI Codex CLI | `~/.codex/hooks.json` |
+| Tencent WorkBuddy | `~/.codebuddy/settings.json` |
+
+4. **完全退出并重新启动每个工具。** Hooks 在启动时加载——必须重启才能生效。
+
+**macOS 用户注意：** 安装完成后，前往**系统设置 → 通知**，为每个 App 确认**声音**开关已打开。这一步不影响音效播放，但能保证通知横幅本身也带提示音。
 
 **支持平台：** macOS、Linux、Windows。
 
