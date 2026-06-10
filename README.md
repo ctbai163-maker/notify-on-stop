@@ -53,20 +53,21 @@
 
 ## 安装方法
 
-1. 下载 [`notify-on-stop.skill`](notify-on-stop.skill)，双击安装到 Claude Code。
-2. 在 Agent 会话中说：*"帮我配置任务完成通知"*——或者直接运行 `/notify-on-stop`。
+把以下链接发送给 Agent，它会帮你完成安装配置：
 
-   Agent 会自动完成以下两步：
+👉 https://github.com/ctbai163-maker/notify-on-stop
 
-   - 检测本机安装了哪些工具，分别写入各自的配置文件：
+Agent 会自动完成以下两步：
 
-     | 工具 | 配置文件 |
-     |------|---------|
-     | Claude Code | `~/.claude/settings.json` |
-     | OpenAI Codex CLI | `~/.codex/hooks.json` |
-     | Tencent WorkBuddy | `~/.codebuddy/settings.json` |
+1. 检测本机安装了哪些工具，分别写入各自的配置文件：
 
-   - **完全退出并重新启动每个工具。** Hooks 在启动时加载，必须重启才能生效。
+   | 工具 | 配置文件 |
+   |------|---------|
+   | Claude Code | `~/.claude/settings.json` |
+   | OpenAI Codex CLI | `~/.codex/hooks.json` |
+   | Tencent WorkBuddy | `~/.codebuddy/settings.json` |
+
+2. **完全退出并重新启动每个工具。** Hooks 在启动时加载，必须重启才能生效。
 
 **macOS 用户注意：** 安装完成后，前往**系统设置 → 通知**，为每个 App 确认**声音**开关已打开。这一步不影响音效播放，但能保证通知横幅本身也带提示音。
 

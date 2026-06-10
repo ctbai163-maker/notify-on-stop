@@ -53,20 +53,21 @@ Each sound is also accompanied by a standard **system notification banner**, so 
 
 ## Installation
 
-1. Download [`notify-on-stop.skill`](../notify-on-stop.skill) and double-click to install it in Claude Code.
-2. In an Agent session, say: *"Set up completion notifications"* — or just run `/notify-on-stop`.
+Send the following link to your agent and it will handle the setup for you:
 
-   The agent will automatically handle the rest:
+👉 https://github.com/ctbai163-maker/notify-on-stop
 
-   - Detect which tools you have installed and write hooks into each one's config file:
+The agent will automatically:
 
-     | Tool | Config file |
-     |------|-------------|
-     | Claude Code | `~/.claude/settings.json` |
-     | OpenAI Codex CLI | `~/.codex/hooks.json` |
-     | Tencent WorkBuddy | `~/.codebuddy/settings.json` |
+1. Detect which tools you have installed and write hooks into each one's config file:
 
-   - **Fully quit and relaunch each tool.** Hooks are loaded at startup — a restart is required for changes to take effect.
+   | Tool | Config file |
+   |------|-------------|
+   | Claude Code | `~/.claude/settings.json` |
+   | OpenAI Codex CLI | `~/.codex/hooks.json` |
+   | Tencent WorkBuddy | `~/.codebuddy/settings.json` |
+
+2. **Fully quit and relaunch each tool.** Hooks are loaded at startup — a restart is required for changes to take effect.
 
 **macOS only:** After installation, go to **System Settings → Notifications** and make sure **Sounds** is enabled for each app. The audio plays regardless, but this ensures the banner also chimes.
 
